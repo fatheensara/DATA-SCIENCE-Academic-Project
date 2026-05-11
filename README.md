@@ -1,81 +1,73 @@
 # Predictive-Health-Assessment-for-Safe-Fasting-During-Ramadan
 
-## 1.0 INTRODUCTION
+### 1.0 INTRODUCTION
 
-This project focuses on developing a predictive model to determine if individuals with chronic medical conditions can fast safely during Ramadan. Using a dataset of over 100,000 medical records, we utilized the **Random Forest** algorithm and **Synthetic Minority Over-sampling Technique (SMOTE)** to provide evidence-based, individualized medical advice. The system addresses a critical gap in healthcare where general guidelines often fail to account for specific physiological risks like hypoglycemia, dehydration, and metabolic stress. By analyzing 63 clinical, demographic, and anthropometric variables, the model offers a data-driven solution to help patients reconcile religious commitments with medical safety.
+This project focuses on developing a predictive model to determine if individuals with chronic medical conditions can fast safely during Ramadan. Using a dataset of over 100,000 medical records, we utilized the **Random Forest** algorithm and **Synthetic Minority Over-sampling Technique (SMOTE)** to provide evidence-based, individualized medical advice . The system addresses a critical gap in healthcare where general guidelines often fail to account for specific physiological risks like hypoglycemia, dehydration, and metabolic stress . By analyzing 63 clinical, demographic, and anthropometric variables, the model offers a data-driven solution to help patients reconcile religious commitments with medical safety.
 
-## 2.0 OBJECTIVES
-
+### 2.0 OBJECTIVES
 ***
-
-* **Identify Correlations**: To identify the relationship between certain medical conditions (e.g., chronic liver disease, immune-compromised status) and a Muslim's ability to fast.
-
-
-* **Analyze Biomarkers**: To analyze the impact of clinical biomarkers such as blood sugar levels and blood pressure on fasting endurance.
+* **Identify Correlations**: To identify the relationship between certain medical conditions, such as chronic liver disease and immune-compromised status, and a Muslim's ability to fast .
 
 
-* **Assess Demographics**: To assess the influence of demographic factors (age, gender, BMI, and ethnicity) on an individual's fasting capability.
+* **Analyze Biomarkers**: To analyze the impact of clinical biomarkers, specifically blood sugar levels and blood pressure, on fasting endurance.
 
 
-
-## 3.0 DATA SOURCES
-
----
-
-* **Dataset**: "Ability to Fast Ramadan Classification" sourced from Kaggle.
-
-
-* **Volume**: 104,125 records and 63 features.
-
-
-* **Features**: Includes demographic variables (age, gender, ethnicity), anthropometric data (weight, height, BMI), and clinical observations such as glucose, albumin, and bilirubin levels.
+* **Assess Demographics**: To assess the influence of demographic factors, including age, gender, BMI, and ethnicity, on an individual's fasting capability .
 
 
 
-## 4.0 PREREQUISITES
+### 3.0 DATA SOURCES
+***
+* **Dataset**: "Ability to Fast Ramadan Classification" dataset.
 
----
 
+* **Volume**: The dataset comprises 104,125 records and 63 features.
+
+
+* **Features**: Data includes demographic variables (age, gender, ethnicity), anthropometric data (weight, height, BMI), and clinical observations such as glucose, albumin, and bilirubin levels .
+
+
+
+### 4.0 PREREQUISITES
+***
 Before running the analysis, ensure the following steps are completed:
 
-* **Environment**: Install a Python 3.12 environment (Anaconda or Google Colab recommended).
+* **Environment**: Install a Python 3.12 environment.
 
 
 * **Library Installation**: Install the necessary data science libraries:
 
 
-`pip install pandas numpy scikit-learn imbalanced-learn matplotlib seaborn scipy`.
+`pip install pandas numpy scikit-learn imbalanced-learn matplotlib seaborn scipy` .
 
 
-* **Dataset Placement**: Ensure the file `data.csv` is in the same directory as the notebooks.
+* **Dataset Placement**: Ensure the file `data.csv` is located in the root project directory.
 
 
-* **Data Preprocessing**: The scripts automatically handle:
-* **Standardization**: Cleaning `gender_identity` and `liver_function_impaired` into binary values.
+* **Data Preprocessing**: The scripts handle several automated tasks:
+* **Standardization**: Cleaning `gender_identity` and `liver_function_impaired` into binary values .
 
 
-* **Imputation**: Automated **KNN imputation** for missing values across all clinical and demographic columns.
+* **Imputation**: Automated **KNN imputation** for missing values across clinical and demographic columns.
 
 
-* **Feature Engineering**: Creating BMI categories and segmenting age into four life stages.
+* **Feature Engineering**: Creating BMI categories and segmenting age into life stages.
 
 
 
 
 
-## 5.0 RUNNING THE SCRIPT
-
----
-
+### 5.0 RUNNING THE SCRIPT
+***
 The methodology follows a structured data science pipeline implemented in Python:
 
 * **Data Acquisition**: Load and explore the dataset using the `pandas` library.
 
 
-* **Preprocessing**: Perform label encoding for categorical variables and handle missing values using median/mode or KNN imputation.
+* **Preprocessing**: Perform label encoding for categorical variables and handle missing values through median/mode or KNN imputation.
 
 
-* **Data Balancing**: Apply **SMOTE** to address the class imbalance, as 78.4% of the original population could fast while only 21.6% could not.
+* **Data Balancing**: Apply **SMOTE** to address the class imbalance, as the original population was 78.4% "Can Fast" and 21.6% "Cannot Fast" .
 
 
 * **Model Development**: Train a **Random Forest Classifier** with an 80/20 train-test split.
@@ -85,10 +77,8 @@ The methodology follows a structured data science pipeline implemented in Python
 
 
 
-## 6.0 EVALUATION
-
----
-
+### 6.0 EVALUATION
+***
 The model was evaluated using a comprehensive suite of performance metrics:
 
 * **AUC-ROC**: The model achieved an area under the curve (AUC) of **0.8226**, indicating high discriminatory ability.
@@ -97,34 +87,33 @@ The model was evaluated using a comprehensive suite of performance metrics:
 * **Accuracy**: The final model achieved a benchmark accuracy of **80.80%**.
 
 
-* **Feature Importance**: Blood glucose levels (`OBS1_glucose_max`) were identified as the most critical predictor, followed by BMI and age.
+* **Feature Importance**: Blood glucose levels (`OBS1_glucose_max`) were identified as the most critical predictor.
 
 
 * **Comparative Analysis**: The clinical-only model achieved 78.42% accuracy, while the demographic-only model reached 72.20%.
 
 
 
-## 7.0 REQUIREMENTS
-
----
-
+### 7.0 REQUIREMENTS
+***
 This project requires Python 3.x and the following libraries:
 
-* `pandas` & `numpy` (Data manipulation) 
+* `pandas` & `numpy` for data manipulation.
 
 
-* `scikit-learn` (Preprocessing and modeling) 
-
-* `matplotlib` & `seaborn` (Visualization) 
+* `scikit-learn` for preprocessing and modeling.
 
 
-* `imblearn` (SMOTE implementation) 
+* `matplotlib` & `seaborn` for visualization.
 
 
-* `scipy.stats` (Statistical testing) 
+* `imblearn` for SMOTE implementation.
 
 
-### 7.0 TEAM
+* `scipy.stats` for statistical testing.
+
+
+### 8.0 TEAM
 ***
 * **Aliah Maisarah Binti Roslee** 
 
